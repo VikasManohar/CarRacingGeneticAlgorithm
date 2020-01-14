@@ -80,7 +80,7 @@ def draw_max_score(gameDisplay):
 
 def draw_car_lines(gameDisplay, cars, thing):
     for car in cars:
-            # draw lines from bird to pipe
+            # draw lines from car to thing
             if DRAW_LINES:
                 try:
                     pygame.draw.line(gameDisplay, (255,0,0), (car.x, car.y), (thing.thingx, thing.thingy + thing.thingh) , 1)
@@ -207,7 +207,7 @@ def eval_genomes(genomes, config):
             score += 1
             if score > MAX_SCORE:
                 MAX_SCORE = score
-            # can add this line to give more reward for passing through a pipe (not required)
+            # can add this line to give more reward for dodging a thing
             for genome in ge:
                 genome.fitness += 5
         
